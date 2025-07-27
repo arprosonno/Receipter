@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Receipt Generator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Receipt Generator</h2>
+  <!-- Restaurant Info Modal -->
+  <div id="setupModal" class="modal">
+    <div class="modal-content">
+      <h3>Restaurant Setup (One-Time)</h3>
+      <form id="setupForm">
+        <label>Restaurant Name:
+          <input type="text" id="restaurantName" required>
+        </label>
+        <label>Restaurant Address:
+          <input type="text" id="restaurantAddress" required>
+        </label>
+        <label>Restaurant Contact:
+          <input type="number" id="restaurantContact" required>
+        </label>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Form -->
+  <form id="receiptForm">
+    <label>Table Number:
+      <input type="number" id="tableNumber" required>
+    </label>
+    <label>Waiter Name:
+      <input type="text" id="waiterName" required>
+    </label>
+    <label>Customer Name:
+      <input type="text" id="customerName" required>
+    </label>
+    <label>Customer Contact:
+      <input type="number" id="customerContact" required>
+    </label>
+    <label>Items (comma-separated):
+      <input type="text" id="items" required>
+    </label>
+    <label>Rates (comma-separated numbers):
+      <input type="text" id="rates" required>
+    </label>
+    <label>Quantities (comma-separated numbers):
+      <input type="text" id="quantities" required>
+    </label>
+    <label>VAT (%):
+      <input type="number" id="vat" required>
+    </label>
+    <label>Service Charge:
+      <input type="number" id="serviceCharge" required>
+    </label>
+    <label>Other Charges (e.g. package:50, tips:30):
+      <input type="text" id="otherCharges">
+    </label>
+    <button type="button" onclick="generateReceipt()">Generate Receipt & Email</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
